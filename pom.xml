@@ -24,7 +24,7 @@
         <dependency>
             <groupId>com.bitium.saml</groupId>
             <artifactId>SAML2Commons</artifactId>
-            <version>1.1.2</version>
+            <version>1.2</version>
             <scope>compile</scope>
             <exclusions>
                 <exclusion>
@@ -111,6 +111,11 @@
             <version>1.8.5</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>jta</groupId>
+            <artifactId>jta</artifactId>
+            <version>1.0.1B</version>
+        </dependency>
     </dependencies>
     <repositories>
         <repository>
@@ -156,9 +161,24 @@
             </plugin>
         </plugins>
     </build>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>atlassian-public</id>
+            <url>https://maven.atlassian.com/content/repositories/atlassian-public/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+                <checksumPolicy>warn</checksumPolicy>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+                <checksumPolicy>warn</checksumPolicy>
+            </releases>
+        </pluginRepository>
+    </pluginRepositories>
     <properties>
         <jira.version>7.0.8</jira.version>
-        <amps.version>6.2.1</amps.version>
+        <amps.version>6.3.3</amps.version>
         <plugin.testrunner.version>1.2.3</plugin.testrunner.version>
         <!-- TestKit version 5.x for JIRA 5.x, 6.x for JIRA 6.x -->
         <testkit.version>6.3.11</testkit.version>
