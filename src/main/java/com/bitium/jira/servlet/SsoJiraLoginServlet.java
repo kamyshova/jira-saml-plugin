@@ -34,6 +34,10 @@ public class SsoJiraLoginServlet extends SsoLoginServlet {
 
     private UserSearchService userSearchService;
 
+    public void setUserSearchService(final UserSearchService userSearchService) {
+        this.userSearchService = userSearchService;
+    }
+
     @Override
     protected void authenticateUserAndLogin(final HttpServletRequest request,
                                             final HttpServletResponse response,
@@ -130,7 +134,4 @@ public class SsoJiraLoginServlet extends SsoLoginServlet {
         return saml2Config.getBaseUrl() + "/login.jsp";
     }
 
-    public void setUserSearchService(final UserSearchService userSearchService) {
-        this.userSearchService = userSearchService;
-    }
 }
